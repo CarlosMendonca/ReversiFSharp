@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "a6103b4f-53a0-4756-bd0b-2015cd9f0d0b": {
+      "ProjectGuid": "a6103b4f-53a0-4756-bd0b-2015cd9f0d0b",
+      "DisplayName": "FSharpConsoleApp2",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
