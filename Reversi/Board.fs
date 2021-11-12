@@ -6,7 +6,9 @@ type Board =
     new(board_size : int) = {
         squares = Board.SquareFactory(board_size)
     }
-    new() = new Board(8)
+
+    member this.GetCoordSquareAt(coord : int * int) =
+        this.GetCordSquareTowards(coord, (0,0), 0)
 
     member this.GetCordSquareTowards((coordX,coordY) : int * int, (vectorX, vectorY) : int * int, hops : int) = 
         let targetCoord = (vectorX * hops + coordX, vectorY * hops + coordY)
