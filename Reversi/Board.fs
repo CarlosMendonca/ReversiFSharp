@@ -18,6 +18,9 @@ type Board =
         | _ ->
             { CoordinatedBoardSquare.Coord = targetCoord; Square = this.squares |> Array2D.get <|| targetCoord }
     
+    member this.SetSquares(coords : (int * int)[], player : Piece) =
+        coords |> Array.iter (fun (coordX, coordY) -> this.squares.[coordX,coordY] <- BoardSquare.Played(player))
+
     member this.Stringify =
         let header      = "   | A | B | C | D | E | F | G | H |"
         let row_divider = "---+---+---+---+---+---+---+---+---+"

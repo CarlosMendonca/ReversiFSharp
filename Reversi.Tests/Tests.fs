@@ -20,3 +20,13 @@ type BoardTests () =
         Assert.AreEqual(
             (board.squares |> Array2D.length1, board.squares |> Array2D.length2),
             (8, 8))
+
+    [<TestMethod>]
+    member this.CapturePiecesCorrectly () =
+        let board = new Board()
+        let coords = [|(3,2); (3,3)|]
+
+        board.SetSquares(coords, Piece.White)
+
+        Assert.AreEqual(board.squares.[3,2], BoardSquare.Played(Piece.White))
+        Assert.AreEqual(board.squares.[3,3], BoardSquare.Played(Piece.White))
