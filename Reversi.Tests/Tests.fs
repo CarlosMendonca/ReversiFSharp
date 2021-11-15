@@ -9,7 +9,8 @@ type BoardTests () =
 
     [<TestMethod>]
     member this.CanInitializeBoard () =
-        let board = new Board()
+        let boardSize = 8
+        let board = new Board(boardSize)
 
         Assert.AreEqual(board.squares.[3,3], BoardSquare.Played(Piece.Black))
         Assert.AreEqual(board.squares.[4,4], BoardSquare.Played(Piece.Black))
@@ -19,11 +20,11 @@ type BoardTests () =
         // Make sure default size is 8x8 because reasons
         Assert.AreEqual(
             (board.squares |> Array2D.length1, board.squares |> Array2D.length2),
-            (8, 8))
+            (boardSize, boardSize))
 
     [<TestMethod>]
     member this.CapturePiecesCorrectly () =
-        let board = new Board()
+        let board = new Board(8)
         let coords = [|(3,2); (3,3)|]
 
         board.SetSquares(coords, Piece.White)
