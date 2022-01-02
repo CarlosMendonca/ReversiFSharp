@@ -48,7 +48,11 @@
                 Error "Invalid play"
 
         member internal this.CheckAvailablePositions =
+            this.board
             failwith "NOT YET IMPLEMENTED!"
+
+        member internal this.CheckPlay =
+            PlayResult.Invalid
 
         //member this.GetCapturedCoords(coord : int * int, vector : int * int) =
         //    let hops = 1
